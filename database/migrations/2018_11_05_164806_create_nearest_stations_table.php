@@ -15,6 +15,11 @@ class CreateNearestStationsTable extends Migration
     {
         Schema::create('nearest_stations', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('station_name');
+            $table->double('latitude', 6, 4);
+            $table->double('longitude',7, 4);
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

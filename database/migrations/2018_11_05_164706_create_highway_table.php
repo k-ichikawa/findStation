@@ -15,6 +15,10 @@ class CreateHighwayTable extends Migration
     {
         Schema::create('highway', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('kana_name');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }
