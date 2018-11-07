@@ -9,7 +9,6 @@ class Highway extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'highway';
-
+    protected $table    = 'highway';
     protected $fillable = ['name', 'kane_name'];
 }

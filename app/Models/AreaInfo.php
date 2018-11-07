@@ -19,4 +19,10 @@ class AreaInfo extends Model
         'longitude',
         'nearest_station_id'
     ];
+
+    public static $DIRECTION_TYPE_UP    = 1;
+    public static $DIRECTION_TYPE_DOWN  = 2;
+
+    public static $NOT_ANYTIME_OPEN = 0;
+    public static $ANYTIME_OPEN     = 1;
 }
