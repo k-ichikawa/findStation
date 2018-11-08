@@ -52,6 +52,7 @@ class MapService
         $result = json_decode($json, true);
 
         return [
+            'area_name'     => $area_info->area_name,
             'station_name'  => $nearest_station->station_name,
             'distance'      => $result['rows'][0]['elements'][0]['distance']['text'],
             'time_required' => $result['rows'][0]['elements'][0]['duration']['text'],

@@ -47365,6 +47365,60 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -47374,6 +47428,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             highway_id: 1,
             direction_type: '1',
             area_info_id: '',
+            area_name: '',
             station_name: '',
             time_required: '',
             distance: '',
@@ -47399,7 +47454,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).then(function (res) {
                 _this.up_area_info = res.data.up_area_info;
                 _this.down_area_info = res.data.down_area_info;
-            }).catch(function (res) {});
+            });
         },
         fetchStationInfo: function fetchStationInfo() {
             var _this2 = this;
@@ -47411,13 +47466,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     area_info_id: this.area_info_id
                 }
             }).then(function (res) {
+                _this2.area_name = res.data.area_name;
                 _this2.station_name = res.data.station_name;
                 _this2.time_required = res.data.time_required;
                 _this2.distance = res.data.distance;
                 _this2.is_anytime = res.data.is_anytime;
                 _this2.open_time = res.data.open_time;
                 _this2.close_time = res.data.close_time;
-            }).catch(function (res) {});
+            });
         },
         changeDirectionType: function changeDirectionType() {
             console.log(this.direction_type);
@@ -47433,177 +47489,297 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "areaInfoContainer" }, [
-    _c("p", [_vm._v("高速道路を選択してください")]),
+  return _c("div", [
+    _vm._m(0),
     _vm._v(" "),
-    _c("select", { attrs: { name: "highway" } }, [
-      _c(
-        "option",
-        {
-          attrs: { value: "1" },
-          model: {
-            value: _vm.highway_id,
-            callback: function($$v) {
-              _vm.highway_id = $$v
-            },
-            expression: "highway_id"
-          }
-        },
-        [_vm._v("東名高速道路")]
-      )
-    ]),
+    _vm._m(1),
     _vm._v(" "),
-    _c("p", [_vm._v("SA, PAを選択してください")]),
-    _vm._v(" "),
-    _c("p", [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.direction_type,
-            expression: "direction_type"
-          }
-        ],
-        attrs: { type: "radio", name: "direction", id: "up", value: "1" },
-        domProps: { checked: _vm._q(_vm.direction_type, "1") },
-        on: {
-          change: function($event) {
-            _vm.direction_type = "1"
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "up" } }, [_vm._v("上り")]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.direction_type,
-            expression: "direction_type"
-          }
-        ],
-        attrs: { type: "radio", name: "direction", id: "down", value: "2" },
-        domProps: { checked: _vm._q(_vm.direction_type, "2") },
-        on: {
-          change: function($event) {
-            _vm.direction_type = "2"
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "down" } }, [_vm._v("下り")])
-    ]),
-    _vm._v(" "),
-    _c(
-      "select",
-      {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.area_info_id,
-            expression: "area_info_id"
-          }
-        ],
-        attrs: { name: "up_area", disabled: _vm.direction_type === "2" },
-        on: {
-          change: [
-            function($event) {
-              var $$selectedVal = Array.prototype.filter
-                .call($event.target.options, function(o) {
-                  return o.selected
-                })
-                .map(function(o) {
-                  var val = "_value" in o ? o._value : o.value
-                  return val
-                })
-              _vm.area_info_id = $event.target.multiple
-                ? $$selectedVal
-                : $$selectedVal[0]
-            },
-            function($event) {
-              _vm.fetchStationInfo()
-            }
-          ]
-        }
-      },
-      _vm._l(_vm.up_area_info, function(area) {
-        return _c("option", { domProps: { value: area.id } }, [
-          _vm._v(_vm._s(area.area_name))
+    _c("div", { staticClass: "contents" }, [
+      _c("section", { staticClass: "search" }, [
+        _c("div", { staticClass: "searchBox" }, [
+          _c("div", { staticClass: "highwaySelect" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "selectBox" }, [
+              _c("select", { attrs: { name: "highway" } }, [
+                _c(
+                  "option",
+                  {
+                    attrs: { value: "1" },
+                    model: {
+                      value: _vm.highway_id,
+                      callback: function($$v) {
+                        _vm.highway_id = $$v
+                      },
+                      expression: "highway_id"
+                    }
+                  },
+                  [_vm._v("東名高速道路")]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "areaSelect" }, [
+            _vm._m(3),
+            _vm._v(" "),
+            _c("div", { staticClass: "area" }, [
+              _c("div", { staticClass: "upArea" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.direction_type,
+                      expression: "direction_type"
+                    }
+                  ],
+                  attrs: {
+                    type: "radio",
+                    name: "direction",
+                    id: "upDirection",
+                    value: "1"
+                  },
+                  domProps: { checked: _vm._q(_vm.direction_type, "1") },
+                  on: {
+                    change: function($event) {
+                      _vm.direction_type = "1"
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "upDirection" } }, [
+                  _vm._v("上り")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.area_info_id,
+                        expression: "area_info_id"
+                      }
+                    ],
+                    attrs: {
+                      name: "up_area",
+                      disabled: _vm.direction_type === "2"
+                    },
+                    on: {
+                      change: [
+                        function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.area_info_id = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        },
+                        function($event) {
+                          _vm.fetchStationInfo()
+                        }
+                      ]
+                    }
+                  },
+                  _vm._l(_vm.up_area_info, function(area) {
+                    return _c("option", { domProps: { value: area.id } }, [
+                      _vm._v(_vm._s(area.area_name))
+                    ])
+                  })
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "downArea" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.direction_type,
+                      expression: "direction_type"
+                    }
+                  ],
+                  attrs: {
+                    type: "radio",
+                    name: "direction",
+                    id: "downDirection",
+                    value: "2"
+                  },
+                  domProps: { checked: _vm._q(_vm.direction_type, "2") },
+                  on: {
+                    change: function($event) {
+                      _vm.direction_type = "2"
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("label", { attrs: { for: "downDirection" } }, [
+                  _vm._v("下り")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.area_info_id,
+                        expression: "area_info_id"
+                      }
+                    ],
+                    attrs: {
+                      name: "down_area",
+                      disabled: _vm.direction_type === "1"
+                    },
+                    on: {
+                      change: [
+                        function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.area_info_id = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        },
+                        function($event) {
+                          _vm.fetchStationInfo()
+                        }
+                      ]
+                    }
+                  },
+                  _vm._l(_vm.down_area_info, function(area) {
+                    return _c("option", { domProps: { value: area.id } }, [
+                      _vm._v(_vm._s(area.area_name))
+                    ])
+                  })
+                )
+              ])
+            ])
+          ])
         ])
-      })
-    ),
-    _vm._v(" "),
-    _c(
-      "select",
-      {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.area_info_id,
-            expression: "area_info_id"
-          }
-        ],
-        attrs: { name: "down_area", disabled: _vm.direction_type === "1" },
-        on: {
-          change: [
-            function($event) {
-              var $$selectedVal = Array.prototype.filter
-                .call($event.target.options, function(o) {
-                  return o.selected
-                })
-                .map(function(o) {
-                  var val = "_value" in o ? o._value : o.value
-                  return val
-                })
-              _vm.area_info_id = $event.target.multiple
-                ? $$selectedVal
-                : $$selectedVal[0]
-            },
-            function($event) {
-              _vm.fetchStationInfo()
-            }
-          ]
-        }
-      },
-      _vm._l(_vm.down_area_info, function(area) {
-        return _c("option", { domProps: { value: area.id } }, [
-          _vm._v(_vm._s(area.area_name))
-        ])
-      })
-    ),
-    _vm._v(" "),
-    _vm.station_name !== ""
-      ? _c("div", [
-          _vm.is_anytime
-            ? _c("p", [_vm._v("営業時間：24時間営業")])
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "result" }, [
+        _c("div", { staticClass: "areaName" }, [
+          _c("h1", [_vm._v("エリア名")]),
+          _vm._v(" "),
+          _vm.station_name === ""
+            ? _c("p", [_vm._v("-")])
+            : _c("p", [_vm._v(_vm._s(_vm.area_name))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "openTime" }, [
+          _c("h1", [_vm._v("営業時間")]),
+          _vm._v(" "),
+          _vm.station_name === ""
+            ? _c("p", [_vm._v("-")])
+            : _vm.is_anytime
+              ? _c("p", [_vm._v("24時間営業")])
+              : _c("p", [
+                  _vm._v(
+                    _vm._s(_vm.open_time) + " 〜 " + _vm._s(_vm.close_time)
+                  )
+                ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "nearestStation" }, [
+          _c("h1", [_vm._v("最寄り駅")]),
+          _vm._v(" "),
+          _vm.station_name === "" ? _c("p", [_vm._v("-")]) : _vm._e(),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.station_name))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "distance" }, [
+          _c("h1", [_vm._v("距離")]),
+          _vm._v(" "),
+          _vm.station_name === ""
+            ? _c("p", [_vm._v("-")])
             : _c("p", [
+                _vm._v(_vm._s(_vm.area_name) + "から" + _vm._s(_vm.distance)),
+                _c("br"),
                 _vm._v(
-                  "営業時間：" +
-                    _vm._s(_vm.open_time) +
-                    " 〜 " +
-                    _vm._s(_vm.close_time)
+                  "\n                    " +
+                    _vm._s(_vm.time_required) +
+                    "\n                "
                 )
               ])
         ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("p", [_vm._v("最寄り駅")]),
-    _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.station_name) + "駅")]),
-    _vm._v(" "),
-    _c("p", [_vm._v("徒歩")]),
-    _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.time_required))]),
-    _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.distance))])
+      ])
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "header" }, [
+      _c("div", { staticClass: "head" }, [
+        _c("a", { staticClass: "logo", attrs: { href: "/" } }, [
+          _c("span", [_vm._v("ニアステ")])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "titleWord" }, [
+        _c("p", [
+          _vm._v("SA、PAで待ち合わせしたいけど、近くに駅ってあるのかな..?")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "explain" }, [
+      _c("div", { staticClass: "explainWord" }, [
+        _c("p", [
+          _vm._v(
+            "友達と車で旅行に行きたい！けど、家まで迎えに行くには高速を降りなきゃ。。"
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "SA（サービスエリア）やPA（パーキングエリア）で待ち合わせができたらなぁ〜"
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [_vm._v("さぁ、早速検索してみましょう！")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "contentTitle" }, [
+      _c("h1", [_vm._v("高速道路")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "contentTitle" }, [
+      _c("h1", [_vm._v("方面、SA・PA")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
