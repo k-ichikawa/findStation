@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    font-family: "メイリオ", Meiryo, "游ゴシック", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "ＭＳ ゴシック", sans-serif;
+}
+
+.header {
+    margin-bottom: 5px;
+}
+
+.header:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.header .head {
+    float: left;
+    width: 30%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.header .head span {
+    font-size: 40px;
+    padding: 10px 5px;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+.header .titleWord {
+    margin-top: 20px;
+    float: left;
+    width: 70%;
+}
+
+.header .titleWord p {
+    margin-top: 0;
+    margin-bottom: 3px;
+    font-size: 14px;
+
+}
+
+.header a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.explain {
+    background-color: darkslategrey;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.explain .explainWord {
+    display: inline-block;
+}
+
+.explain p {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 7px;
+}
+
+.contents {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.contents .search, .contents .result {
+    border: 2px solid #999999;
+    margin-bottom: 10px;
+}
+
+.contents h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #ffffff;
+}
+
+.contents .search h1 {
+    background-color: #D2B48C;
+    padding-left: 10px;
+}
+
+.contents .search .selectBox {
+    margin-top: 10px;
+}
+
+.contents .search .highwaySelect {
+    margin-bottom: 10px;
+}
+
+.contents .contentTitle, .contents .selectBox {
+    text-align: center;
+}
+
+.contents .search .area {
+    text-align: center;
+}
+
+.contents .search .area:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.contents .search .area .upArea {
+    float: left;
+    width: 50%;
+    border-right: 1px #636b6f dotted;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.contents .search .area .downArea {
+    float: left;
+    width: 50%;
+    padding-top: 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.contents .result .areaName, .contents .result .openTime, .contents .result .nearestStation, .contents .result .distance {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contents .result h1 {
+    background-color: #8FBC8F;
+}
+
+.footer {
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 12px;
+    color: #3d4852;
+}
+
+.footer a {
+    text-decoration-line: underline;
+    color: #3d4852;
+}
+
+@media (max-width: 414px) {
+    .header .head {
+        margin-top: 15px;
+    }
+
+    .header .titleWord {
+        margin-top: 10px;
+    }
+
+    .header .head span {
+        font-size: 20px;
+    }
+
+    .header .titleWord p {
+        font-size: 12px;
+    }
+
+    .explain p {
+        font-size: 12px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    select {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 769px) and (min-width: 415px) {
+    .header .head {
+        margin-top: 10px;
+    }
+
+    .header .titleWord {
+        margin-top: 23px;
+    }
+
+    .header .head span {
+        font-size: 30px;
+    }
+
+    .header .titleWord p {
+        font-size: 13px;
+    }
+
+    .explain p {
+        font-size: 13px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .contents:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .contents .search .searchBox {
+        border: 2px solid #999999;
+    }
+
+    .contents .search {
+        float: left;
+        width: 50%;
+        border: none;
+        padding-right: 10px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+    .contents .result {
+        float: left;
+        width: 50%;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+}
