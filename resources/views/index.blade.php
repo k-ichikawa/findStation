@@ -19,7 +19,7 @@
         <div id="app">
             <area-info-component></area-info-component>
         </div>
-        <div class="footer">Copyright &copy; ニアステ <a href="http://icchy-profile.site">製作者サイト</a></div>
+        <div class="footer">Copyright &copy; ニアステ <a href="http://icchy-profile.site" target="_blank">製作者サイト</a></div>
     </body>
 <script src="{{ asset('js/app.js') }}"></script>
 
